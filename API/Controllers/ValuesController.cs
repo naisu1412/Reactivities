@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Persistence;
 
 namespace DatingApp.API.Controllers
 {
@@ -10,6 +11,12 @@ namespace DatingApp.API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly DataContext context;
+        public ValuesController(DataContext context)
+        {
+            this.context = context;
+
+        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -21,7 +28,7 @@ namespace DatingApp.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value" +id;
+            return "value" + id;
         }
 
         // POST api/values
