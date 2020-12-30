@@ -19,7 +19,8 @@ namespace API
             var host = CreateHostBuilder(args).Build();
 
             //To make a migration first before running the application
-            using (var scope = host.Services.CreateScope()){
+            using (var scope = host.Services.CreateScope())
+            {
                 var services = scope.ServiceProvider;
 
                 try
@@ -27,6 +28,8 @@ namespace API
                     var context = services.GetRequiredService<DataContext>();
 
                     context.Database.Migrate();
+
+                    Seed.SeedData(context);
                 }
                 catch (Exception ex)
                 {
