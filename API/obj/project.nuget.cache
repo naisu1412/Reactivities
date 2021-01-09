@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJ+Yv/1VSFWp7sxjbbnQP7duxn3Mvu9l6yujllEb0EV2BB5JqBjFtybrYmP4E72Y7QH47SQu+dQjSuXLg4E5ig==",
+  "dgSpecHash": "s6p6+C0C7mnqWzykp7qcYgO+Nw5y8JSWj+wQASMjGedab3zpjvdCDV8yKZhpC6IG4lb2F+46hMREwFWUPsgeeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\naisu\\Documents\\Udemy\\Reactivities\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\naisu\\Documents\\Udemy\\Reactivities\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\naisu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
