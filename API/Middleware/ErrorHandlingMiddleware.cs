@@ -1,6 +1,6 @@
 using System;
 using System.Net;
-using System.Text.Json;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Application.Errors;
 using Microsoft.AspNetCore.Http;
@@ -18,6 +18,7 @@ namespace API.Middleware
             _next = next;
         }
 
+
         public async Task Invoke(HttpContext context)
         {
             try
@@ -27,7 +28,6 @@ namespace API.Middleware
             catch (Exception ex)
             {
                 await HandleExceptionAsync(context, ex, _logger);
-                throw;
             }
         }
 
@@ -52,7 +52,7 @@ namespace API.Middleware
             context.Response.ContentType = "application/json";
             if (errors != null)
             {
-                var result = JsonSerializer.Serialize(new
+                var result = JsonConvert.SerializeObject(new
                 {
                     errors
                 });

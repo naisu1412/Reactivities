@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/K4n+W7UqHH/KkAL2yGFiKAdmaTDz9MCgViiuAENthJWekMTAVDIZbY9NisKJUKQJtJe1LjcOPP0uDX/sUbpjQ==",
+  "dgSpecHash": "hrtCCvcrAD1ytnebd+NJ+tFpSxcPKitykSz2Y9Se/RnlNxtwKP4p3cb+oELL8GlYwyCqkaiB4rG7DTU8WHJvGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\naisu\\Documents\\Udemy\\Reactivities\\api\\API.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\naisu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.4\\microsoft.extensions.logging.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\microsoft.extensions.options\\3.1.4\\microsoft.extensions.options.3.1.4.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.4\\microsoft.extensions.primitives.3.1.4.nupkg.sha512",
+    "C:\\Users\\naisu\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\naisu\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
