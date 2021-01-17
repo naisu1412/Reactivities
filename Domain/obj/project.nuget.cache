@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dCcsdwAQQDQQNxTS2TlFUUVRQvL9xJQ2vV9Jc0f2iuiN/u03lh1/CeRubsNb8Z7RRhY8ub0rQxniHK67k3q0lQ==",
+  "dgSpecHash": "qIFV1qTRLXx09d9IIrZl4CRDhoRc+wHgOm/yU02+X/BAbcCTcUPFIS1Skzx3A23jaAieR0V1Cv4Wnb54CP9Ntg==",
   "success": true,
   "projectFilePath": "C:\\Users\\naisu\\Documents\\Udemy\\Reactivities\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\naisu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\naisu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\naisu\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\naisu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\naisu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
   ],
   "logs": []
 }

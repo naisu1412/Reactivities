@@ -3,6 +3,8 @@ using Domain;
 using System.Threading.Tasks;
 using System.Threading;
 using Persistence;
+using Application.Errors;
+using System.Net;
 
 namespace Application.Activites
 {
@@ -24,6 +26,10 @@ namespace Application.Activites
             public async Task<Activity> Handle(Query request, CancellationToken cancellationToken)
             {
                 var activity = await _context.Activities.FindAsync(request.Id);
+
+                if (activity == null)
+                    throw new RestException(HttpStatusCode.NotFound, new { activity = "Not found the data" });
+
 
                 return activity;
             }
