@@ -9,6 +9,7 @@ import { HomePage } from '../../feature/Home/HomePage';
 import ActivityForm from '../../feature/activities/form/ActivityForm';
 import ActivityDetails from '../../feature/activities/details/ActivityDetails';
 import NotFound from './NotFound';
+import { ToastContainer } from 'react-toastify';
 
 
 const App: React.FC<RouteComponentProps> = ({ location }) => {
@@ -16,6 +17,7 @@ const App: React.FC<RouteComponentProps> = ({ location }) => {
 
   return (
     <Fragment>
+      <ToastContainer position='bottom-right' />
       <Route exact path='/' component={HomePage} />
       <Route path={'/(.+)'} render={() => (
         <Fragment>
