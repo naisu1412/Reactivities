@@ -4,13 +4,18 @@ import agent from "../api/agent";
 import { history } from "../..";
 import { IActivity } from "../models/activities";
 import { toast } from "react-toastify";
+import { RootStore } from "./rootStore";
 
-configure({ enforceActions: 'always' });
 
-export class ActivityStore {
-    constructor() {
+export default class ActivityStore {
+    rootStore: RootStore;
+    
+    constructor(rootStore: RootStore) {
+        this.rootStore = rootStore;
         makeObservable(this);
+
     }
+
     @observable loadingInitial = false;
     @observable activity: IActivity | null = null;
     @observable submitting = false;
@@ -153,5 +158,3 @@ export class ActivityStore {
     }
 
 }
-
-export default createContext(new ActivityStore());
