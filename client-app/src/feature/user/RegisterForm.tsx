@@ -11,20 +11,32 @@ import { RootStoreContext } from '../../app/stores/rootStore'
 
 const validate = combineValidators({
     email: isRequired('email'),
+    username: isRequired('username'),
+    displayName: isRequired('display name'),
     password: isRequired('password')
 });
-const LoginForm = () => {
+const RegisterForm = () => {
     const rootStore = useContext(RootStoreContext);
-    const { login } = rootStore.userStore;
+    const { register } = rootStore.userStore;
     return (
         <FinalForm
-            onSubmit={(values: IUserFormValues) => login(values).catch(error => ({
+            onSubmit={(values: IUserFormValues) => register(values).catch(error => ({
                 [FORM_ERROR]: error
             }))}
             validate={validate}
             render={({ handleSubmit, submitting, submitError, invalid, pristine, dirtySinceLastSubmit }) => (
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} error>
                     <Header as='h2' content='Login to Reactivities' color='teal' textAlign='center' />
+                    <Field
+                        name='username'
+                        component={TextInput}
+                        placeholder='Username'
+                    />
+                    <Field
+                        name='displayName'
+                        component={TextInput}
+                        placeholder='Display Name'
+                    />
                     <Field
                         name='email'
                         component={TextInput}
@@ -36,11 +48,11 @@ const LoginForm = () => {
                         placeholder='Password'
                         type='password'
                     />
-                    {submitError && !dirtySinceLastSubmit && <ErrorMessage error={submitError} text='Imvalid username or password' />}
+                    {submitError && !dirtySinceLastSubmit && <ErrorMessage error={submitError} text={''} />}
                     <Button
                         disabled={(invalid && !dirtySinceLastSubmit) || pristine}
                         loading={submitting}
-                        color='teal' content='Login'
+                        color='teal' content='Register'
                         fluid
                     />
 
@@ -50,4 +62,4 @@ const LoginForm = () => {
     )
 }
 
-export default observer(LoginForm)
+export default observer(RegisterForm)

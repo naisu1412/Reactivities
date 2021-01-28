@@ -9,8 +9,6 @@ const ActivityDashboard: React.FC = () => {
     const rootStore = useContext(RootStoreContext);
     const { loadActivities, loadingInitial } = rootStore.activityStore;
 
-    const { logout, user } = rootStore.userStore;
-
     useEffect(() => {
         loadActivities();
     }, [loadActivities]);
@@ -24,7 +22,6 @@ const ActivityDashboard: React.FC = () => {
             </Grid.Column>
             <Grid.Column width={6}>
                 <h2>Activity Filters</h2>
-                <h2>Wassup {user?.displayName}</h2>
             </Grid.Column>
         </Grid>
     )
