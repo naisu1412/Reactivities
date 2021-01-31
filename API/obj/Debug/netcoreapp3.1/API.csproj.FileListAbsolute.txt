@@ -86,3 +86,7 @@ C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Infrastr
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
