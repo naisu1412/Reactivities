@@ -90,3 +90,4 @@ C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\AutoMapp
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\naisu\Documents\Udemy\Reactivities\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\naisu\Documents\Udemy\Reactivities\API\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
