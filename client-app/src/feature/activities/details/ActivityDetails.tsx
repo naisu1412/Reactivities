@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react'
 import { LoadingComponent } from '../../../app/layout/LoadingComponent';
 import { RootStoreContext } from '../../../app/stores/rootStore';
-import { ActivityDetailsChat } from './ActivityDetailsChat';
+import ActivityDetailsChat from './ActivityDetailsChat';
 import ActivityDetailsHeader from './ActivityDetailsHeader';
 import { ActivityDetailsInfo } from './ActivityDetailsInfo';
 import ActivityDetailsSideBar from './ActivityDetailsSideBar';

@@ -16,6 +16,7 @@ export default class ProfileStore {
     @observable loadingProfile = true;
     @observable uploadingPhoto = false;
     @observable loading = false;
+    @observable updateProfileLoading = false;
 
     @computed get isCurrentUser() {
         if (this.rootStore.userStore.user && this.profile) {
@@ -33,6 +34,8 @@ export default class ProfileStore {
                 this.profile = profile;
                 this.loadingProfile = false;
             })
+            return profile;
+
         } catch (error) {
             runInAction(() => {
                 this.loadingProfile = false;
@@ -97,6 +100,23 @@ export default class ProfileStore {
             runInAction(() => {
                 this.loading = false;
             })
+        }
+    }
+
+    @action updateProfile = async (profile: IProfile) => {
+        this.updateProfileLoading = true;
+        try {
+            await agentExport.Profiles.updateProfile(profile);
+            runInAction(() => {
+                this.profile = profile;
+                this.updateProfileLoading = false;
+            });
+            return profile;
+        } catch (error) {
+            toast.error("Problem updating your profile")
+            runInAction(() => {
+                this.updateProfileLoading = false;
+            });
         }
     }
 }
