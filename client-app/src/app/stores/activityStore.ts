@@ -1,4 +1,4 @@
-import { observable, action, makeObservable, computed, configure, runInAction } from "mobx";
+import { observable, action, makeObservable, computed, configure, runInAction, keys, reaction } from "mobx";
 import { SyntheticEvent } from "react";
 import agent from "../api/agent";
 import { history } from "../..";
@@ -10,6 +10,8 @@ import { HubConnection, HubConnectionBuilder, LogLevel } from "@microsoft/signal
 
 configure({ enforceActions: 'always' });
 
+const LIMIT = 2;
+
 export default class ActivityStore {
     rootStore: RootStore;
 
@@ -17,6 +19,14 @@ export default class ActivityStore {
         this.rootStore = rootStore;
         makeObservable(this);
 
+        reaction(
+            () => this.predicate.keys(),
+            () => {
+                this.page = 0;
+                this.activityRegistry.clear();
+                this.loadActivities();
+            }
+        )
     }
 
     @observable loadingInitial = false;
@@ -26,6 +36,38 @@ export default class ActivityStore {
     @observable target = '';
     @observable loading = false;
     @observable.ref hubConnection: HubConnection | null = null;
+    @observable activityCount = 0;
+    @observable page = 0;
+    @observable predicate = new Map();
+
+    @action setPredicate = (predicate: string, value: string | Date) => {
+        this.predicate.clear();
+        if (predicate !== 'all') {
+            this.predicate.set(predicate, value);
+        }
+    }
+
+    @computed get axiosParam() {
+        const params = new URLSearchParams();
+        params.append('limit', String(LIMIT));
+        params.append('offset', `${this.page ? this.page * LIMIT : 0}`);
+        this.predicate.forEach((value, key) => {
+            if (key === 'startDate') {
+                params.append(key, value.toISOString())
+            } else {
+                params.append(key, value);
+            }
+        });
+        return params
+    }
+
+    @computed get totalPages() {
+        return Math.ceil(this.activityCount / LIMIT);
+    }
+
+    @action setPage = (page: number) => {
+        this.page = page;
+    }
 
     @action createHubConnection = (activityId: string) => {
         this.hubConnection = new HubConnectionBuilder().withUrl("http://localhost:5000/chat/", {
@@ -94,15 +136,15 @@ export default class ActivityStore {
     @action loadActivities = async () => {
         this.loadingInitial = true;
 
-
         try {
-            const activities = await agent.Activities.list();
+            const activitiesEnvelope = await agent.Activities.list(this.axiosParam);
+            const { activities, activityCount } = activitiesEnvelope;
             runInAction(() => {
                 activities.forEach(activity => {
                     setActivityProps(activity, this.rootStore.userStore.user!)
                     this.activityRegistry.set(activity.id, activity);
                 });
-
+                this.activityCount = activityCount;
                 this.loadingInitial = false;
             });
         } catch (error) {
